@@ -5,7 +5,6 @@ function settingsFunction() {
     var theCriticalLevel = 0;
 
     var callCostTotal = 0;
-
     var smsCostTotal = 0;
 
 
