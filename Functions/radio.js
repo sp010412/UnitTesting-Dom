@@ -1,51 +1,50 @@
 function radioFunction() {
 
     var theCallTotal = 0;
-
     var theSmsTotal = 0;
 
+    function radioFunction1(checkedRadioBtn) {
 
-    function setCallCost() {
-        theCallTotal += 2.75;
+        var billItemType = checkedRadioBtn
+
+        if (billItemType === "call") {
+            theCallTotal += 2.75
+        }
+        else if (billItemType === "sms") {
+            theSmsTotal += 0.75;
+        }
     }
 
-    function getCallCost() {
+    function totalCalls() {
         return theCallTotal;
     }
 
-    function setSmsCost() {
-        theSmsTotal += 0.75;
+    function totalSms() {
+        return theSmsTotal;
     }
 
-    function getSmsCost() {
-        return theSmsTotal
+    function total() {
+        return theCallTotal + theSmsTotal;
     }
 
+    function color() {
 
-    function makeCall() {
-        callTotal += theCallTotal;
+        if (total() >= 30 && total() < 50) {
+            return "warning"
+        }
+        if (total() >= 50) {
+            return "critical"
+        }
     }
-
-    function sendSms() {
-        smsTotal += theSmsTotal;
-    }
-
-
-    function getTotal() {
-        return callTotal + smsTotal;
-    }
-
-
 
     return {
-        setCallCost,
-        getCallCost,
-        setSmsCost,
-        getSmsCost,
-        makeCall,
-        sendSms,
-        getTotal
-        
+        radioFunction1,
+        totalCalls,
+        totalSms,
+        total,
+        color,
+
+
     }
 
 }

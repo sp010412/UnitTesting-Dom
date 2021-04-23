@@ -1,31 +1,37 @@
 describe('Calculate Bill', function () {
-    it("should return the total cost of calls ", function () {
+    it("should return the total of calls ", function () {
         let calculateFunction = calculate();
 
         calculateFunction.calculate2('call')
-        assert.equal(calculateFunction.total(), 2.75);
+        calculateFunction.calculate2('call')
+        assert.equal(calculateFunction.total(), 5.5);
 
     });
 
-    it("should return the total cost of sms's ", function () {
+    it("should return the total of sms's ", function () {
         let calculateFunction = calculate();
 
         calculateFunction.calculate2('sms')
-        assert.equal(calculateFunction.total(), 0.75);
+        calculateFunction.calculate2('sms')
+        calculateFunction.calculate2('sms')
+        assert.equal(calculateFunction.total(), 2.25);
 
     });
 
-    it("should return the total cost of calls and sms's ", function () {
+    it("should return the total of calls and sms's ", function () {
         let calculateFunction = calculate();
 
         calculateFunction.calculate2('call')
-        assert.equal(calculateFunction.total(), 2.75);
+        calculateFunction.calculate2('sms')
+        calculateFunction.calculate2('call')
+        calculateFunction.calculate2('sms')
+        assert.equal(calculateFunction.total(), 7);
 
     });
 
-    describe('testing the colors', function () {
+    describe('Warning & Critical', function () {
 
-        it('should return warning', function () {
+        it(("should return class name 'warning' when total reaches 20"), function () {
             let calculateFunction = calculate();
 
             calculateFunction.calculate2('call');
@@ -36,14 +42,12 @@ describe('Calculate Bill', function () {
             calculateFunction.calculate2('call');
             calculateFunction.calculate2('call');
             calculateFunction.calculate2('call');
-
-
 
             assert.equal(calculateFunction.total(), 22);
             assert.equal(calculateFunction.color(), "warning");
         });
 
-        it('should return critical', function () {
+        it(("should return class name 'critical' when total reaches 30"), function () {
             let calculateFunction = calculate();
 
             calculateFunction.calculate2('call');
@@ -61,12 +65,9 @@ describe('Calculate Bill', function () {
             calculateFunction.calculate2('call');
             calculateFunction.calculate2('call');
 
-
-
             assert.equal(calculateFunction.total(), 38.5);
             assert.equal(calculateFunction.color(), "critical");
         });
     });
-
 
 });
