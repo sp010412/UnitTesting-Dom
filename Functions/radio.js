@@ -33,7 +33,7 @@ function radioFunction() {
             return "warning"
         }
         if (total() >= 50) {
-            return "critical"
+            return "danger"
         }
     }
 

@@ -25,7 +25,7 @@ if(total() >=20 && total()<30){
     return "warning"
     }
     if(total() >= 30){
-        return "critical"
+        return "danger"
         }
 }
 

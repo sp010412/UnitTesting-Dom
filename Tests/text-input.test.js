@@ -41,7 +41,7 @@ describe('Text Input', function () {
 
     });
 
-    describe('Warning & Critical', function () {
+    describe('Warning & Danger', function () {
 
         it("should return class name 'warning' when total reaches 30", function () {
             let textBill = textBillTotal1();
@@ -73,7 +73,7 @@ describe('Text Input', function () {
             assert.equal(textBill.color(), "warning");
         });
 
-        it("should return class name 'critical' when total reaches 50", function () {
+        it("should return class name 'danger' when total reaches 50", function () {
             let textBill = textBillTotal1();
 
             textBill.textBillTotal('sms')
@@ -112,7 +112,7 @@ describe('Text Input', function () {
             textBill.textBillTotal('call')
 
             assert.equal(textBill.total(), 59.5);
-            assert.equal(textBill.color(), "critical");
+            assert.equal(textBill.color(), "danger");
         });
     });
 });

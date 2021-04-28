@@ -47,7 +47,7 @@ describe('Radio Bill', function () {
         assert.equal(radioBill.totalSms(), 6);
     });
 
-    describe('Waning & Critical', function () {
+    describe('Waning & Danger', function () {
 
         it("should return class name 'warning' when total reaches 30", function () {
             let radioBill = radioFunction();
@@ -83,7 +83,7 @@ describe('Radio Bill', function () {
 
         });
 
-        it("should return class name 'critical' when total reaches 50", function () {
+        it("should return class name 'danger' when total reaches 50", function () {
             let radioBill = radioFunction();
 
             radioBill.radioFunction1('sms');
@@ -125,7 +125,7 @@ describe('Radio Bill', function () {
             radioBill.radioFunction1('call');
 
             assert.equal(radioBill.total(), 53.75);
-            assert.equal(radioBill.color(), 'critical');
+            assert.equal(radioBill.color(), 'danger');
 
         });
     });

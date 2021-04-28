@@ -29,7 +29,7 @@ describe('Calculate Bill', function () {
 
     });
 
-    describe('Warning & Critical', function () {
+    describe('Warning & Danger', function () {
 
         it(("should return class name 'warning' when total reaches 20"), function () {
             let calculateFunction = calculate();
@@ -47,7 +47,7 @@ describe('Calculate Bill', function () {
             assert.equal(calculateFunction.color(), "warning");
         });
 
-        it(("should return class name 'critical' when total reaches 30"), function () {
+        it(("should return class name 'danger' when total reaches 30"), function () {
             let calculateFunction = calculate();
 
             calculateFunction.calculate2('call');
@@ -66,7 +66,7 @@ describe('Calculate Bill', function () {
             calculateFunction.calculate2('call');
 
             assert.equal(calculateFunction.total(), 38.5);
-            assert.equal(calculateFunction.color(), "critical");
+            assert.equal(calculateFunction.color(), "danger");
         });
     });
 
